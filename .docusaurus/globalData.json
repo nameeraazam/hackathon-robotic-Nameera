@@ -8,11 +8,21 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "intro",
+          "mainDocId": "introduction",
           "docs": [
             {
               "id": "active_perception",
               "path": "/docs/active_perception",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ai-ml",
+              "path": "/docs/ai-ml",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "applications",
+              "path": "/docs/applications",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -21,13 +31,33 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "components",
+              "path": "/docs/components",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ethics",
+              "path": "/docs/ethics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "history",
+              "path": "/docs/history",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "intro",
               "path": "/docs/intro",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "physical-ai-and-humanoids",
-              "path": "/docs/physical-ai-and-humanoids",
+              "id": "introduction",
+              "path": "/docs/introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "sota",
+              "path": "/docs/sota",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -75,8 +105,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/intro",
-                "label": "intro"
+                "path": "/docs/introduction",
+                "label": "introduction"
               }
             }
           }

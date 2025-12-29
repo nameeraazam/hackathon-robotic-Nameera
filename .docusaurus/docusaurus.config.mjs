@@ -87,7 +87,7 @@ export default {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Tutorial"
+          "label": "Read Book"
         },
         {
           "to": "/blog",
@@ -109,7 +109,7 @@ export default {
           "title": "Docs",
           "items": [
             {
-              "label": "Tutorial",
+              "label": "Read Book",
               "to": "/docs/intro"
             }
           ]

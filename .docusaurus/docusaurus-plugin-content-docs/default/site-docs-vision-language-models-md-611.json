@@ -14,8 +14,8 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Comprehensive Overview of Physical AI & Humanoid Robotics",
-    "permalink": "/docs/physical-ai-and-humanoids"
+    "title": "AWS RoboMaker: Cloud-Based Robotics Development and Deployment",
+    "permalink": "/docs/aws_robomaker"
   },
   "next": {
     "title": "Week 1-2 Assessment: Physical AI and Humanoid Fundamentals",

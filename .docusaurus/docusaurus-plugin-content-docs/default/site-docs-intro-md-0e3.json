@@ -1,7 +1,7 @@
 {
   "id": "intro",
-  "title": "Main Page",
-  "description": "This is the main page.",
+  "title": "Introduction to Humanoid Robotics",
+  "description": "Welcome to the Humanoid Robotics and Physical AI course. This comprehensive guide covers everything from the fundamentals of Physical AI to advanced humanoid systems, computer vision, and the latest SOTA (State of the Art) developments in the field.",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
@@ -16,8 +16,12 @@
     "sidebar_position": 1
   },
   "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction to Physical AI",
+    "permalink": "/docs/introduction"
+  },
   "next": {
-    "title": "Active Perception in Robotics",
-    "permalink": "/docs/active_perception"
+    "title": "History of Humanoid Robotics",
+    "permalink": "/docs/history"
   }
 }

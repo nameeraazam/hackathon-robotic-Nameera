@@ -14,8 +14,8 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Main Page",
-    "permalink": "/docs/intro"
+    "title": "Ethical Considerations and Future Challenges",
+    "permalink": "/docs/ethics"
   },
   "next": {
     "title": "AWS RoboMaker: Cloud-Based Robotics Development and Deployment",

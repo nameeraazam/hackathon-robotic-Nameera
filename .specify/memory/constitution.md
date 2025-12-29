@@ -1,55 +1,84 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Project Constitution
 
-## Core Principles
+This document serves as the supreme law of the codebase. All agents and developers must adhere to these principles, standards, and workflows.
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+## I. Core Philosophy: Spec-Driven Development (SDD)
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+We believe that **writing code is the easy part; understanding what to build is the hard part.** Therefore, we prioritize clear specifications over immediate implementation.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+## II. Workflow Specifications
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+We adhere to a strict document-driven workflow. Each phase produces a specific artifact with mandatory components.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### 1. Specification Phase (`sp.specify`)
+**Goal**: Define the *What* and *Why*.
+**Artifact**: `specs/<feature>/spec.md`
+**Mandatory Content**:
+*   **Metadata**: Feature Branch, Status, Input Prompt.
+*   **User Scenarios & Testing**:
+    *   **User Stories**: Must be prioritized (P1, P2, P3).
+    *   **Independent Test**: How to verify the story in isolation.
+    *   **Acceptance Scenarios**: Given/When/Then format.
+    *   **Edge Cases**: Error handling, boundaries, and negative tests.
+*   **Requirements**:
+    *   **Functional Requirements (FR-xxx)**: "System MUST..." statements. Testable.
+    *   **Key Entities**: Data objects or core concepts involved.
+*   **Success Criteria**:
+    *   **Measurable Outcomes (SC-xxx)**: Quantitative (latency, count) or qualitative (user success) metrics.
 
-### [PRINCIPLE_6_NAME]
+### 2. Planning Phase (`sp.plan`)
+**Goal**: Define the *How*.
+**Artifact**: `specs/<feature>/plan.md`
+**Mandatory Content**:
+*   **Technical Context**:
+    *   **Constraints**: Hard limits (tech stack, budget, legacy).
+    *   **Unknowns**: Risks or things to research.
+*   **Constitution Check**: Validation against project principles.
+*   **Phase 0: Research**:
+    *   **Decisions**: "We chose X because Y."
+    *   **Alternatives**: "We considered Z but rejected it because..."
+*   **Phase 1: Design**:
+    *   **Data Models**: Schemas, fields, relationships.
+    *   **API Contracts**: Endpoints, inputs, outputs.
+*   **Phase 2: Implementation Steps**: High-level strategy (MVP first).
 
+### 3. Tasking Phase (`sp.tasks`)
+**Goal**: Break down into atomic actions.
+**Artifact**: `specs/<feature>/tasks.md`
+**Mandatory Content**:
+*   **Phases**:
+    *   **Phase 1: Setup**: Infrastructure & boilerplate.
+    *   **Phase 2: Foundational**: Blocking prerequisites.
+    *   **Phase 3+: User Stories**: Organized by Priority (P1, P2...).
+*   **Task Format**:
+    *   `[ ] Txxx [P] [Story] Description`
+    *   **[P]**: Parallelizable.
+    *   **[Story]**: US1, US2, etc.
+*   **Dependencies**: Explicit execution order and blockers.
 
-[PRINCIPLE__DESCRIPTION]
+## III. Technical Standards
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Tech Stack
+- **Documentation/Frontend**: Docusaurus (React, TypeScript/JavaScript).
+- **Backend/Scripts**: Python (preferred for data/robotics), Node.js (for web tooling).
+- **Styling**: CSS Modules or standard CSS.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Code Quality
+- **Readability**: Code is read more often than written. Optimize for clarity.
+- **Comments**: Explain *Why*, not *What*. Use docstrings for functions/classes.
+- **Naming**: Verbose and descriptive. `calculateTrajectory()` > `calcTraj()`.
+- **DRY (Don't Repeat Yourself)**: Extract common logic, but prefer duplication over wrong abstraction.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## IV. Quality Assurance
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- **Testing**:
+    *   **Critical Paths**: Must have automated tests (Unit/Integration).
+    *   **UI/Docs**: Manual verification scenarios are acceptable.
+- **Review**: All code changes must be reviewed against the `tasks.md` checklist.
+- **Refactoring**: Leave the campsite cleaner than you found it.
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+## V. Documentation
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+- **Single Source of Truth**: The `docs/` folder is the product.
+- **Live Specs**: Specifications (`specs/`) are living documents. If requirements change, update the Spec first.
+- **ADRs**: Architecturally significant decisions must be recorded in `history/adr/`.
